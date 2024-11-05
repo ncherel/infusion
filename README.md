@@ -3,6 +3,8 @@
 This is the code for "Infusion: internal diffusion for inpainting of dynamic textures and complex motion " (https://arxiv.org/abs/2311.01090). You will find the basics for reproducing the results.
 The code has been simplified to split training and inference instead of running them together. It is indeed easier to share and debug this way.
 
+![](teaser.gif)
+
 ## Interval training
 
 We propose to use "interval training". Our models are trained on a single video and are used only a handful of times. To improve the performance, training and inference are mixed during the diffusion process, which is divided into intervals.
