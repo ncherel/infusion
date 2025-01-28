@@ -1,6 +1,9 @@
 # Infusion
 
-This is the code for "Infusion: internal diffusion for inpainting of dynamic textures and complex motion " (https://arxiv.org/abs/2311.01090). You will find the basics for reproducing the results.
+This is the code for "Infusion: internal diffusion for inpainting of dynamic textures and complex motion " (https://arxiv.org/abs/2311.01090). You will find the basic elements for reproducing the results.
+
+Website: https://infusion.telecom-paris.fr
+
 The code has been simplified to split training and inference instead of running them together. It is indeed easier to share and debug this way.
 
 ![](teaser.gif)
