@@ -50,7 +50,7 @@ class SingleMaskedVideoTrainDataset(IterableDataset):
 
 
 class SingleVideoTestDataset(Dataset):
-    def __init__(self, image_path, mask_path, small=False, n_frames=24):
+    def __init__(self, image_path, mask_path, small=False, n_frames=1000):
         """Test on video, n_frames can be used to process only the first n frames of a video if running into
         memory issues
         """
@@ -108,8 +108,13 @@ def get_random_shape(edge_num=9, ratio=0.7, width=432, height=240):
     ax.axis('off')  # removes the axis to leave only the shape
     fig.canvas.draw()
     # convert plt images into numpy images
-    data = np.frombuffer(fig.canvas.tostring_rgb(), dtype=np.uint8)
-    data = data.reshape((fig.canvas.get_width_height()[::-1] + (3,)))
+    try:
+        # Old matplotlib version
+        data = np.frombuffer(fig.canvas.tostring_rgb(), dtype=np.uint8)
+        data = data.reshape((fig.canvas.get_width_height()[::-1] + (3,)))
+    except:
+        # recent matplotlib
+        data = np.asarray(fig.canvas.renderer.buffer_rgba())[:,:,:3]
     plt.close(fig)
     # postprocess
     data = cv2.resize(data, (width, height))[:, :, 0]

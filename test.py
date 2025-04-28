@@ -80,4 +80,4 @@ for step in range(int(diffusion.T / interval_size)):
 
 os.makedirs(args.output, exist_ok=True)
 for i in range(masks.shape[2]):
-    save_image((1+y0[:,:,i])/2, join(args.output, f"pred_{i:04d}.png"), range=(-1,1))
+    save_image((1+y0[:,:,i])/2, join(args.output, f"pred_{i:04d}.png"))
