@@ -41,7 +41,7 @@ Suggested parameters: 2000 steps for ants, fountain_1 with `--small` flag, 10000
 
 ## Testing the model
 
-A few trained models and data can be found here: [https://partage.imt.fr/index.php/s/ttZAEPBeHg5DBWp](https://partage.imt.fr/index.php/s/ttZAEPBeHg5DBWp)
+A few trained models and data can be found here: [https://partage.imt.fr/index.php/s/ttZAEPBeHg5DBWp](https://partage.imt.fr/index.php/s/ttZAEPBeHg5DBWp) or on [Google Drive](https://drive.google.com/drive/folders/1Y_uYOiYKtKe6YABh7cnwzG67ZUaxfzg7?usp=drive_link).
 After downloading the models and the data for testing, inference is run with:
 
 ```
@@ -49,3 +49,21 @@ python test.py --video data/ants.mp4 --mask data/ants_mask.mp4 --checkpoint mode
 ```
 
 `--small` is only used for 256x256 videos from the DynTex databse (ants.mp4, fountain_1.mp4). The other videos are resized to 432x240 (jumping-girl-fire.mp4, young-jaws.mp4).
+
+
+## Cite
+
+```
+@article{https://doi.org/10.1111/cgf.70070,
+author = {Cherel, N. and Almansa, A. and Gousseau, Y. and Newson, A.},
+title = {Infusion: Internal Diffusion for Inpainting of Dynamic Textures and Complex Motion},
+journal = {Computer Graphics Forum},
+volume = {n/a},
+number = {n/a},
+pages = {e70070},
+keywords = {CCS Concepts, • Computing methodologies → Image processing},
+doi = {https://doi.org/10.1111/cgf.70070},
+url = {https://onlinelibrary.wiley.com/doi/abs/10.1111/cgf.70070},
+eprint = {https://onlinelibrary.wiley.com/doi/pdf/10.1111/cgf.70070},
+}
+```
